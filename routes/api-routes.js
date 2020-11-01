@@ -59,6 +59,23 @@ module.exports = function (app) {
             });
     });
 
+
+    app.post("/api/patients", function (req, res) {
+        console.log("`````````````````^^^^^^^^^^^^^^^^^``````````````````")
+        console.log(req.body);
+        db.Patient.create(req.body)
+            // name: req.body.name,
+            // age :req.body.age,
+            // DoctorId : req.body.DoctorId
+            // // body: req.body.body,
+            // // category: req.body.category
+
+        
+            .then(function (dbPost) {
+                res.json(dbPost);
+            });
+    });
+
     // DELETE route for deleting posts
     // app.delete("/api/posts/:id", function (req, res) {
     //     db.Post.destroy({

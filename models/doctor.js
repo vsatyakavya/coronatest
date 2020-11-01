@@ -10,6 +10,14 @@ module.exports = function(sequelize, DataTypes) {
      
       
     });
+
+
+
+    Doctor.associate = function(models){
+        Doctor.hasMany(models.Patient,{
+            onDelete : "cascade"
+        })
+    }
     return Doctor;
   };
   

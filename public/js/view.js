@@ -3,9 +3,11 @@ function renderDoctor(props){
   const { doctor, index} = props;
   const { name} = doctor;
   return $(/*html*/`
-    <div class="well" id="doctor-well-${index}">
+    <div class="well" id=${index}>
       <h2>${name}</h2>
-     
+      <a href="/addPatient?doctor_id="+doctor.id+ class="btn btn-primary btn-sm">
+      <span class="fa fa-eye"></span> Add Patient</a>
+
       
     
     </div>
